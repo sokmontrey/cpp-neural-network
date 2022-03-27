@@ -1,25 +1,16 @@
 #include "matrix.hpp"
 
 Matrix::Matrix() = default;
-Matrix::Matrix(int rows, int cols){
+Matrix::Matrix(int rows, int cols, double value){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix.resize(rows);
 	for(int i=0; i<rows; i++){
-		this->matrix[i].resize(cols);
+		this->matrix[i].resize(cols, value);
 	}
 }
 Matrix::~Matrix(){ this->matrix.clear(); }
 
-void Matrix::setAll(double value){
-	if(isInitialized) throw "Matrix is already initialized";
-	for(int i=0; i<rows; i++){
-		for(int j=0; j<cols; j++){
-			this->matrix[i][j] = value;
-		}
-	}
-	isInitialized = true;
-}
 void Matrix::randomize(double min, double max, double seed){
 	if(isInitialized) throw "Matrix is already initialized";
 	srand(seed);
@@ -29,6 +20,9 @@ void Matrix::randomize(double min, double max, double seed){
 		}
 	}
 	isInitialized = true;
+}
+
+void transpose() const{
 }
 
 void Matrix::print() const{

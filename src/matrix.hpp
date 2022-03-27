@@ -16,11 +16,11 @@ class Matrix{
 		Matrix(int rows, int cols);
 		~Matrix();
 
-		void setAll(double value);
 		void randomize(double min, double max, double seed);
 
 		double& operator()(int row, int col);
 
+		void transpose() const;
 		void print() const;
 };
 
