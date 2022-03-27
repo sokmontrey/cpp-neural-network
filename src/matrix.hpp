@@ -10,33 +10,16 @@ class Matrix{
 		int cols;
 
 		vector<vector<double>> matrix;
+		bool isInitialized = false;
 	public:
 		Matrix();
-		Matrix(int rows, int cols, double value);
-		Matrix(int rows, int cols, double min, double max);
+		Matrix(int rows, int cols);
 		~Matrix();
 
-		int getRows();
-		int getCols();
+		void setAll(double value);
+		void randomize(double min, double max, double seed);
 
-		void operator= (Matrix& other);
-		double& operator() (int row, int col);
-
-		//scalar operations
-		// to substract use + (-)
-		// to devide use * (1/x)
-		Matrix operator+ (double scalar) const;
-		Matrix operator* (double scalar) const;
-		Matrix operator^ (double scalar) const;
-
-		void operator += (double scalar);
-
-		//matrix operations
-		Matrix operator+ (Matrix& other) const;
-		Matrix operator* (Matrix& other) const;
-
-		//transpose
-		Matrix transpose() const;
+		double& operator()(int row, int col);
 
 		void print() const;
 };

@@ -1,11 +1,8 @@
 #include "matrix.hpp"
 
 int main(){
-	//Matrix<int> m1(2,2);
-	Matrix m(20,20,0,1);
-	m.print();
-	Matrix m2 = m.transpose();
-	m2.print();
+	Matrix m(3,3);
+	m.setAll(1);
 
 	return 0;
 }
