@@ -30,6 +30,8 @@ class Matrix{
 		Matrix operator+(Matrix& matrix);
 		Matrix operator-(Matrix& matrix);
 
+		Matrix operator-();
+
 		Matrix transpose();
 
 		void print() const;
