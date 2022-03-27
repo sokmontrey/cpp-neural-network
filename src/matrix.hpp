@@ -38,6 +38,7 @@ class Matrix{
 
 		/*__method__*/
 		Matrix transpose();
+		Matrix square();
 
 		void print() const;
 };

@@ -10,6 +10,16 @@ Matrix Matrix::transpose(){
 	return transposed;
 }
 
+Matrix Matrix::square(){
+	Matrix squared(rows, cols);
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < cols; j++){
+			squared(i, j) = matrix[i][j] * matrix[i][j];
+		}
+	}
+	return squared;
+}
+
 void Matrix::print() const{
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++) {
