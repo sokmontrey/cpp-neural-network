@@ -5,11 +5,27 @@ double& Matrix::operator()(int row, int col){
 }
 
 /*__scalar_operator__*/
+Matrix Matrix::addScalar(double scalar){
+	return matrix + scalar;
+}
+Matrix Matrix::multiplyScalar(double scalar){
+	return matrix * scalar;
+}
+
 Matrix Matrix::operator+(double scalar){
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			result(i,j) = matrix[i][j] + scalar;
+		}
+	}
+	return result;
+}
+Matrix Matrix::operator*(double scalar){
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = matrix[i][j] * scalar;
 		}
 	}
 	return result;

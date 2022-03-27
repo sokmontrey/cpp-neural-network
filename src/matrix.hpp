@@ -17,8 +17,9 @@ class Matrix{
 
 		double& operator()(int row, int col);
 
-		//sclar operator
+		/*__scalar_operator__*/
 		Matrix operator+(double scalar);
+		Matrix operator*(double scalar);
 
 		Matrix transpose();
 
