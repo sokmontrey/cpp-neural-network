@@ -32,6 +32,10 @@ class Matrix{
 
 		Matrix operator-();
 
+		/*__getter__*/
+		int getRows();
+		int getCols();
+
 		/*__method__*/
 		Matrix transpose();
 

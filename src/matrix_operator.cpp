@@ -53,7 +53,7 @@ Matrix Matrix::operator/(double scalar){
 
 /*__matrix_operator__*/
 Matrix Matrix::operator+(Matrix& other){
-	if(rows != other.rows || cols != other.cols)
+	if(rows != other.getRows() || cols != other.getCols())
 		throw std::invalid_argument("Matrix dimensions do not match");
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
@@ -65,12 +65,12 @@ Matrix Matrix::operator+(Matrix& other){
 }
 //matrix multiplication
 Matrix Matrix::operator^(Matrix& other){
-	if(cols != other.rows)
+	if(cols != other.getRows())
 		throw std::invalid_argument("Matrix dimensions do not match");
-	Matrix result(rows, other.cols);
+	Matrix result(rows, other.getCols());
 	//optimize matrix multiplication algorithm
 	for(int i=0; i<rows; i++){
-		for(int j=0; j<other.cols; j++){
+		for(int j=0; j<other.getCols(); j++){
 			for(int k=0; k<cols; k++){
 				result(i,j) += matrix[i][k] * other(k,j);
 			}
@@ -80,7 +80,7 @@ Matrix Matrix::operator^(Matrix& other){
 }
 //normal matrix multiplication(element by element)
 Matrix Matrix::operator*(Matrix& other){
-	if(rows != other.rows || cols != other.cols)
+	if(rows != other.getRows()|| cols != other.getCols())
 		throw std::invalid_argument("Matrix dimensions do not match");
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
@@ -92,7 +92,7 @@ Matrix Matrix::operator*(Matrix& other){
 }
 
 Matrix Matrix::operator-(Matrix& other){
-	if(rows != other.rows || cols != other.cols)
+	if(rows != other.getRows() || cols != other.getCols())
 		throw std::invalid_argument("Matrix dimensions do not match");
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
