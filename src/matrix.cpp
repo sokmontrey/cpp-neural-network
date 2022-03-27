@@ -28,6 +28,11 @@ Matrix::Matrix(int rows,int cols,double min,double max,double seed){
 		}
 	}
 }
+Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
+	this->rows = rows;
+	this->cols = cols;
+	this->matrix = matrix;
+}
 Matrix::~Matrix(){ this->matrix.clear(); }
 
 void Matrix::print() const{
