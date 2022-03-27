@@ -23,6 +23,7 @@ class Matrix{
 		Matrix operator*(double scalar);
 
 		/*__matrix_operator__*/
+		Matrix operator**(Matrix& matrix);
 		Matrix operator*(Matrix& matrix);
 		Matrix operator+(Matrix& matrix);
 
