@@ -1,9 +1,8 @@
 #include "matrix.hpp"
 
 int main(){
-	Matrix m(3,3,1);
+	Matrix m(2,3,2);
 	m.print();
-
-	return 0;
+	m = m + 3;
+	m.print();
 }
-
