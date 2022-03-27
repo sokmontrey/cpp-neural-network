@@ -10,13 +10,10 @@ class Matrix{
 		int cols;
 
 		vector<vector<double>> matrix;
-		bool isInitialized = false;
 	public:
 		Matrix();
-		Matrix(int rows, int cols);
+		Matrix(int rows, int cols, double value);
 		~Matrix();
-
-		void randomize(double min, double max, double seed);
 
 		double& operator()(int row, int col);
 

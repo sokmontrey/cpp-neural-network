@@ -11,17 +11,6 @@ Matrix::Matrix(int rows, int cols, double value){
 }
 Matrix::~Matrix(){ this->matrix.clear(); }
 
-void Matrix::randomize(double min, double max, double seed){
-	if(isInitialized) throw "Matrix is already initialized";
-	srand(seed);
-	for(int i=0; i<rows; i++){
-		for(int j=0; j<cols; j++){
-			this->matrix[i][j] = min + (max-min)*((double)rand()/RAND_MAX);
-		}
-	}
-	isInitialized = true;
-}
-
 void transpose() const{
 }
 
