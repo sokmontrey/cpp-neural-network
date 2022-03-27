@@ -16,6 +16,9 @@ class Matrix{
 		Matrix(int rows, int cols, double min, double max);
 		~Matrix();
 
+		int getRows() const;
+		int getCols() const;
+
 		void print() const;
 };
 

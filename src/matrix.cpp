@@ -27,6 +27,13 @@ Matrix::Matrix(int rows, int cols, double min, double max){
 
 Matrix::~Matrix(){ matrix.clear(); }
 
+/*__getters__*/
+int Matrix::getRows() const { return rows; }
+int Matrix::getCols() const { return cols; }
+
+/*__operators__*/
+
+/*____*/
 void Matrix::print() const {
 	cout << "\n";
 	for(int i=0; i<rows; i++){
