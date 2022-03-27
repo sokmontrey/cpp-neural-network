@@ -14,11 +14,29 @@ Matrix Matrix::operator+(double scalar){
 	}
 	return result;
 }
+Matrix Matrix::operator-(double scalar){
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = matrix[i][j] - scalar;
+		}
+	}
+	return result;
+}
 Matrix Matrix::operator*(double scalar){
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			result(i,j) = matrix[i][j] * scalar;
+		}
+	}
+	return result;
+}
+Matrix Matrix::operator/(double scalar){
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = matrix[i][j] / scalar;
 		}
 	}
 	return result;
@@ -59,6 +77,18 @@ Matrix Matrix::operator*(Matrix& other){
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			result(i,j) = matrix[i][j] * other(i,j);
+		}
+	}
+	return result;
+}
+
+Matrix Matrix::operator-(Matrix& other){
+	if(rows != other.rows || cols != other.cols)
+		throw std::invalid_argument("Matrix dimensions do not match");
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = matrix[i][j] - other(i,j);
 		}
 	}
 	return result;
