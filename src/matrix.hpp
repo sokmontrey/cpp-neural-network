@@ -16,8 +16,11 @@ class Matrix{
 		Matrix(int rows, int cols, double min, double max);
 		~Matrix();
 
-		int getRows() const;
-		int getCols() const;
+		int getRows();
+		int getCols();
+
+		void operator=(Matrix& other);
+		double& operator()(int row, int col);
 
 		void print() const;
 };
