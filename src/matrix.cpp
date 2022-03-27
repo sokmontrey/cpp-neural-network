@@ -31,10 +31,6 @@ void Matrix::randomize(double min, double max, double seed){
 	isInitialized = true;
 }
 
-double& Matrix::operator()(int row, int col){
-	return matrix[row][col];
-}
-
 void Matrix::print() const{
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
