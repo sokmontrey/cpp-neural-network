@@ -13,6 +13,7 @@ class Matrix{
 		Matrix(int rows, int cols);
 		Matrix(int rows, int cols, double value);
 		Matrix(int rows, int cols, double min, double max, double seed);
+		Matrix(int rows, int cols, double min, double max);
 		Matrix(int rows, int cols, vector<vector<double>> matrix);
 		~Matrix();
 
