@@ -17,7 +17,6 @@ class Matrix{
 
 		double& operator()(int row, int col);
 
-		void transpose() const;
 		void print() const;
 };
 

@@ -6,13 +6,13 @@ Matrix::Matrix(int rows, int cols, double value){
 	this->cols = cols;
 	this->matrix.resize(rows);
 	for(int i=0; i<rows; i++){
-		this->matrix[i].resize(cols, value);
+		this->matrix[i].resize(cols);
+		for(int j=0; j<cols; j++){
+			this->matrix[i][j] = value;
+		}
 	}
 }
 Matrix::~Matrix(){ this->matrix.clear(); }
-
-void transpose() const{
-}
 
 void Matrix::print() const{
 	for(int i=0; i<rows; i++){
