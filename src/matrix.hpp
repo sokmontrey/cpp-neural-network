@@ -19,8 +19,24 @@ class Matrix{
 		int getRows();
 		int getCols();
 
-		void operator=(Matrix& other);
-		double& operator()(int row, int col);
+		void operator= (Matrix& other);
+		double& operator() (int row, int col);
+
+		//scalar operations
+		// to substract use + (-)
+		// to devide use * (1/x)
+		Matrix operator+ (double scalar) const;
+		Matrix operator* (double scalar) const;
+		Matrix operator^ (double scalar) const;
+
+		void operator += (double scalar);
+
+		//matrix operations
+		Matrix operator+ (Matrix& other) const;
+		Matrix operator* (Matrix& other) const;
+
+		//transpose
+		Matrix transpose() const;
 
 		void print() const;
 };
