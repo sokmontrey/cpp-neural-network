@@ -25,13 +25,14 @@ class Matrix{
 		Matrix operator/(double scalar);
 
 		/*__matrix_operator__*/
-		Matrix operator**(Matrix& matrix);
-		Matrix operator*(Matrix& matrix);
-		Matrix operator+(Matrix& matrix);
+		Matrix operator^(Matrix& matrix); //matmul
+		Matrix operator*(Matrix& matrix); //mul
+		Matrix operator+(Matrix& matrix); 
 		Matrix operator-(Matrix& matrix);
 
 		Matrix operator-();
 
+		/*__method__*/
 		Matrix transpose();
 
 		void print() const;
