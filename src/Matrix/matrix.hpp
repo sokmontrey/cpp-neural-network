@@ -41,5 +41,15 @@ class Matrix{
 		Matrix transpose();
 		Matrix square();
 
+		/*__activation__*/
+		Matrix sigmoid();
+		Matrix tanh();
+		Matrix relu();
+
+		/*__derivative_activation__*/
+		Matrix dSigmoid();
+		Matrix dTanh();
+		Matrix dRelu();
+
 		void print() const;
 };
