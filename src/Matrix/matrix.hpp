@@ -41,6 +41,8 @@ class Matrix{
 		int getCols();
 
 		/*__method__*/
+		double sum();
+
 		Matrix transpose();
 		Matrix square();
 		Matrix exp();
