@@ -1,6 +1,9 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <cmath>
+
+#include "../Activation/activation.hpp"
 
 using namespace std;
 class Matrix{
@@ -38,8 +41,23 @@ class Matrix{
 		int getCols();
 
 		/*__method__*/
+		double sum();
+
 		Matrix transpose();
 		Matrix square();
+		Matrix exp();
+		Matrix log();
+
+		/*__activation__*/
+		Matrix sigmoid();
+		Matrix tanh();
+		Matrix relu();
+		Matrix softmax();
+
+		/*__derivative_activation__*/
+		Matrix dSigmoid();
+		Matrix dTanh();
+		Matrix dRelu();
 
 		void print() const;
 };
