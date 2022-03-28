@@ -47,6 +47,7 @@ class Matrix{
 		Matrix sigmoid();
 		Matrix tanh();
 		Matrix relu();
+		Matrix softmax();
 
 		/*__derivative_activation__*/
 		Matrix dSigmoid();
