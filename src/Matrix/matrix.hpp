@@ -2,6 +2,8 @@
 #include <random>
 #include <vector>
 
+#include "../Activation/activation.hpp"
+
 using namespace std;
 class Matrix{
 	private:
