@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <cmath>
 
 #include "../Activation/activation.hpp"
 

@@ -20,6 +20,25 @@ Matrix Matrix::square(){
 	return squared;
 }
 
+Matrix Matrix::exp(){
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = exp(matrix[i][j]);
+		}
+	}
+	return result;
+}
+Matrix Matrix::log(){
+	Matrix result(rows, cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			result(i,j) = log(matrix[i][j]);
+		}
+	}
+	return result;
+}
+
 void Matrix::print() const{
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++) {
