@@ -42,6 +42,8 @@ class Matrix{
 		/*__method__*/
 		Matrix transpose();
 		Matrix square();
+		Matrix exp();
+		Matrix log();
 
 		/*__activation__*/
 		Matrix sigmoid();
