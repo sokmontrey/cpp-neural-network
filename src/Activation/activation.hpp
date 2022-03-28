@@ -10,9 +10,7 @@ class Activation{
         double tanh(double x);
         double relu(double x);
 
-        //parameter must be output from activation func
-        //(activated)
-        double dSigmoid(double activated);
-        double dTanh(double activated);
-        double dRelu(double activated);
+        double dSigmoid(double x);
+        double dTanh(double x);
+        double dRelu(double x);
 };
