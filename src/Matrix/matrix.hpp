@@ -49,15 +49,15 @@ class Matrix{
 		Matrix log();
 
 		/*__activation__*/
-		Matrix sigmoid();
-		Matrix tanh();
-		Matrix relu();
-		Matrix softmax();
+		static Matrix sigmoid();
+		static Matrix tanh();
+		static Matrix relu();
+		static softmax();
 
 		/*__derivative_activation__*/
-		Matrix dSigmoid();
-		Matrix dTanh();
-		Matrix dRelu();
+		static dSigmoid();
+		static dTanh();
+		static dRelu();
 
 		void print() const;
 };
