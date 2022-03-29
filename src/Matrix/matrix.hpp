@@ -52,12 +52,13 @@ class Matrix{
 		static Matrix sigmoid();
 		static Matrix tanh();
 		static Matrix relu();
-		static softmax();
+		static Matrix softmax();
 
 		/*__derivative_activation__*/
-		static dSigmoid();
-		static dTanh();
-		static dRelu();
+		static Matrix dSigmoid();
+		static Matrix dTanh();
+		static Matrix dRelu();
+		static Matrix dSoftmax();
 
 		void print() const;
 };
