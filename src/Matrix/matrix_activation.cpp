@@ -28,6 +28,16 @@ Matrix Matrix::relu(){
     }
     return result;
 }
+Matrix Matrix::softmax(){
+    Matrix result(rows, cols);
+    double sum = (matrix.exp()).sum();
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
+            result(i,j) = std::exp(matrix[i][j]);
+        }
+    }
+    return result;
+}
 
 /*__derivative__*/
 Matrix Matrix::dSigmoid(){
