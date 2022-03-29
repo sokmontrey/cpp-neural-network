@@ -1,4 +1,4 @@
-#include <iosteam>
+#include <iostream>
 #include <vector>
 #include <cmath>
 
@@ -6,11 +6,11 @@ using namespace std;
 
 class Activation{
     public:
-        double sigmoid(double x);
-        double tanh(double x);
-        double relu(double x);
+        static double sigmoid(double x);
+        static double tanh(double x);
+        static double relu(double x);
 
-        double dSigmoid(double x);
-        double dTanh(double x);
-        double dRelu(double x);
+        static double dSigmoid(double x);
+        static double dTanh(double x);
+        static double dRelu(double x);
 };

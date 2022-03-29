@@ -34,7 +34,7 @@ Matrix Matrix::exp(){
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
-			result(i,j) = exp(matrix[i][j]);
+			result(i,j) = std::exp(matrix[i][j]);
 		}
 	}
 	return result;
@@ -43,7 +43,7 @@ Matrix Matrix::log(){
 	Matrix result(rows, cols);
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
-			result(i,j) = log(matrix[i][j]);
+			result(i,j) = std::log(matrix[i][j]);
 		}
 	}
 	return result;
