@@ -16,9 +16,15 @@ class Layer{
   public:
     Layer();
     Layer(int inputLength, int outputLength, Matrix (*activationFunc)(Matrix& a));
-    
+  
+    Matrix forward(Matrix& input);
+  
     /*__getter__*/
     Matrix getOutput();
     Matrix getWeight();
     Matrix getBias();
+  
+    /*__setter__*/
+    void setWeight(Matrix& newWeight);
+    void setBias(Matrix& newBias);
 };
