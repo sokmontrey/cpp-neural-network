@@ -42,6 +42,7 @@ class Matrix{
 
 		/*__method__*/
 		double sum();
+		double max();
 
 		Matrix transpose();
 		Matrix square();
