@@ -10,7 +10,7 @@ class Activation{
         static double tanh(double x);
         static double relu(double x);
 
-        static double dSigmoid(double x);
-        static double dTanh(double x);
-        static double dRelu(double x);
+        static double dSigmoid(double activated);
+        static double dTanh(double activated);
+        static double dRelu(double activated);
 };
