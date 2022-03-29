@@ -9,6 +9,15 @@ double Matrix::sum(){
 	}
 	return sum;
 }
+double Matrix::max(){
+	double max = matrix[i][j];
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			max = std::max(matrix[i][j], max);
+		}
+	}
+	return max;
+}
 
 Matrix Matrix::transpose(){
 	Matrix transposed(cols, rows);
