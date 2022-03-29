@@ -33,7 +33,7 @@ Matrix Matrix::softmax(){
     double sum = (matrix.exp()).sum();
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i,j) = std::exp(matrix[i][j]);
+            result(i,j) = std::exp(matrix[i][j]) / sum;
         }
     }
     return result;
