@@ -36,9 +36,9 @@ Matrix::Matrix(int rows, int cols, vector<double> random){
 		}
 	}
 }
-Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
-	this->rows = rows;
-	this->cols = cols;
+Matrix::Matrix(vector<vector<double>> matrix){
+	this->rows = matrix.size();
+	this->cols = matrix[0].size();
 	this->matrix = matrix;
 }
 
