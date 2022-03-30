@@ -10,4 +10,5 @@ Layer::Layer(
 ){
   this->weight = Matrix(inputLength,outputLength,{-1,1,1});
   this->bias = Matrix(outputLength,1,{-1,1,1});
+  this->output = Matrix(outputLength, 1, 0);
 }
