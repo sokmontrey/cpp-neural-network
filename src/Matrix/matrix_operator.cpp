@@ -68,7 +68,6 @@ Matrix Matrix::operator^(Matrix& other){
 	if(cols != other.getRows())
 		throw std::invalid_argument("Matrix dimensions do not match");
 	Matrix result(rows, other.getCols());
-	//optimize matrix multiplication algorithm
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<other.getCols(); j++){
 			for(int k=0; k<cols; k++){
