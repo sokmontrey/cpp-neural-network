@@ -1,5 +1,5 @@
 #include "./Matrix/matrix.hh"
-#include "./Module/layer.hh"
+#include "./Model/layer.hh"
 #include "./Activation/activation.hh"
 
 int main(){
