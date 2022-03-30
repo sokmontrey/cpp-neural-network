@@ -1,6 +1,9 @@
 #include "matrix.hpp"
 
-void Matrix::reInit(int rows, int cols){
+Matrix::Matrix() = default;
+Matrix::~Matrix(){ this->matrix.clear(); }
+
+Matrix::Matrix(int rows, int cols){ 
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix.resize(rows);
@@ -8,7 +11,7 @@ void Matrix::reInit(int rows, int cols){
 		this->matrix[i].resize(cols, 0);
 	}
 }
-void Matrix::reInit(int rows, int cols, double value){
+Matrix::Matrix(int rows, int cols, double value){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix.resize(rows);
@@ -18,7 +21,7 @@ void Matrix::reInit(int rows, int cols, double value){
 			this->matrix[i][j] = value;
 	}
 }
-void Matrix::reInit(int rows, int cols, vector<double> random){
+Matrix::Matrix(int rows, int cols, vector<double> random){
 	this->rows = rows;
 	this->cols = cols;
 
@@ -33,26 +36,9 @@ void Matrix::reInit(int rows, int cols, vector<double> random){
 		}
 	}
 }
-void Matrix::reInit(int rows, int cols, vector<vector<double>> matrix){
+Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix = matrix;
-}
-
-
-Matrix::Matrix() = default;
-Matrix::~Matrix(){ this->matrix.clear(); }
-
-Matrix::Matrix(int rows, int cols){ 
-	this->reInit(rows, cols);
-}
-Matrix::Matrix(int rows, int cols, double value){
-	this->reInit(rows, cols, value);
-}
-Matrix::Matrix(int rows, int cols, vector<double> random){
-	this->reInit(rows, cols, random);
-}
-Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
-	this->reInit(rows, cols, matrix);
 }
 

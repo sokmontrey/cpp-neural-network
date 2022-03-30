@@ -20,11 +20,6 @@ class Matrix{
 		Matrix(int rows, int cols, vector<double> random);
 		Matrix(int rows, int cols, vector<vector<double>> matrix);
 
-		void reInit(int rows, int cols);
-		void reInit(int rows, int cols, double value);
-		void reInit(int rows, int cols, vector<double> random);
-		void reInit(int rows, int cols, vector<vector<double>> matrix);
-
 		double& operator()(int row, int col);
 
 		/*__scalar_operator__*/
