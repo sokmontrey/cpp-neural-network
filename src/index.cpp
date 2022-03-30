@@ -1,9 +1,10 @@
-#include "./Matrix/matrix.hpp"
+#include "./Matrix/matrix.hh"
+#include "./Module/layer.hh"
+#include "./Activation/activation.hh"
 
 int main(){
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
 	Matrix m(2,3,3);
-	m.print();
-	m = Matrix(3,2,1);
-	m.print();
+
+	cout << Activation::sigmoid(3) << endl;
 }

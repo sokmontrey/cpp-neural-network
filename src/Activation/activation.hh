@@ -1,3 +1,6 @@
+#ifndef ACTIVATION_HH
+#define ACTIVATION_HH
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -14,3 +17,5 @@ class Activation{
         static double dTanh(double activated);
         static double dRelu(double activated);
 };
+
+#endif

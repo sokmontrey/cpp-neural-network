@@ -1,4 +1,4 @@
-#include "matrix.hpp"
+#include "matrix.hh"
 
 double Matrix::sum(){
 	double sum = 0;

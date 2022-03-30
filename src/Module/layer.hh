@@ -1,7 +1,10 @@
+#ifndef LAYER_HH
+#define LAYER_HH
+
 #include <iostream>
 #include <vector>
 
-#include "../Matrix/matrix.hpp"
+#include "../Matrix/matrix.hh"
 
 using namespace std;
 
@@ -10,15 +13,17 @@ class Layer{
     Matrix weight;
     Matrix bias;
     Matrix output;
-    Matrix (*activationFunction)(Matrix& a);
-    Matrix (*dActivationFunction)(Matrix& activated);
+    Matrix (*activation)(Matrix& a);
+    Matrix (*dActivation)(Matrix& activated);
   
   public:
     Layer();
-    Layer(int inputLength, 
+    Layer(
+      int inputLength, 
       int outputLength, 
       Matrix (*activationFunc)(Matrix& a), 
-      Matrix (*dActivationFunc)(Matrix& activated));
+      Matrix (*dActivationFunc)(Matrix& activated)
+    );
   
     Matrix forward(Matrix& input);
   
@@ -31,3 +36,4 @@ class Layer{
     void setWeight(Matrix& newWeight);
     void setBias(Matrix& newBias);
 };
+#endif

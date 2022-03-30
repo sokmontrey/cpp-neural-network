@@ -1,4 +1,4 @@
-#include "matrix.hpp"
+#include "matrix.hh"
 
 double& Matrix::operator()(int row, int col){
 	return this->matrix[row][col];

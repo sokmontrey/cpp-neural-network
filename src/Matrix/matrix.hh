@@ -1,9 +1,12 @@
+#ifndef MATRIX_HH
+#define MATRIX_HH
+
 #include <iostream>
 #include <random>
 #include <vector>
 #include <cmath>
 
-#include "../Activation/activation.hpp"
+#include "../Activation/activation.hh"
 
 using namespace std;
 class Matrix{
@@ -61,3 +64,5 @@ class Matrix{
 
 		void print() const;
 };
+
+#endif

@@ -1,4 +1,4 @@
-#include "matrix.hpp"
+#include "matrix.hh"
 
 /*__activation__*/
 Matrix Matrix::sigmoid(Matrix& a){

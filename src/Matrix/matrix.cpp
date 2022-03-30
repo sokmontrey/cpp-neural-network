@@ -1,4 +1,4 @@
-#include "matrix.hpp"
+#include "matrix.hh"
 
 Matrix::Matrix() = default;
 Matrix::~Matrix(){ this->matrix.clear(); }
