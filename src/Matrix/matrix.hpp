@@ -50,14 +50,14 @@ class Matrix{
 		Matrix log();
 
 		/*__activation__*/
-		static Matrix sigmoid();
-		static Matrix tanh();
-		static Matrix relu();
+		static Matrix sigmoid(Matrix& a);
+		static Matrix tanh(Matrix& a);
+		static Matrix relu(Matrix& a);
 
 		/*__derivative_activation__*/
-		static Matrix dSigmoid();
-		static Matrix dTanh();
-		static Matrix dRelu();
+		static Matrix dSigmoid(Matrix& a);
+		static Matrix dTanh(Matrix& a);
+		static Matrix dRelu(Matrix& a);
 
 		void print() const;
 };

@@ -15,7 +15,10 @@ class Layer{
   
   public:
     Layer();
-    Layer(int inputLength, int outputLength, Matrix (*activationFunc)(Matrix& a), Matrix (*dActivationFunc)(Matrix& activated));
+    Layer(int inputLength, 
+      int outputLength, 
+      Matrix (*activationFunc)(Matrix& a), 
+      Matrix (*dActivationFunc)(Matrix& activated));
   
     Matrix forward(Matrix& input);
   

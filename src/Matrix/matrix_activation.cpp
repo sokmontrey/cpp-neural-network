@@ -1,68 +1,63 @@
 #include "matrix.hpp"
 
 /*__activation__*/
-Matrix Matrix::sigmoid(){
+Matrix Matrix::sigmoid(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i, j) = Activation::sigmoid(matrix[i][j]);
+            result(i, j) = Activation::sigmoid(a(i,j));
         }
     }
     return result;
 }
-Matrix Matrix::tanh(){
+Matrix Matrix::tanh(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i, j) = Activation::tanh(matrix[i][j]);
+            result(i, j) = Activation::tanh(a(i,j));
         }
     }
     return result;
 }
-Matrix Matrix::relu(){
+Matrix Matrix::relu(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i, j) = Activation::relu(matrix[i][j]);
+            result(i, j) = Activation::relu(a(i,j));
         }
     }
     return result;
 }
-Matrix Matrix::softmax(){
+/*__derivative_activation__*/
+Matrix Matrix::dSigmoid(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
-    double sum = (matrix.exp()).sum();
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i,j) = std::exp(matrix[i][j]) / sum;
+            result(i, j) = Activation::dSigmoid(a(i,j));
         }
     }
     return result;
 }
-
-/*__derivative__*/
-Matrix Matrix::dSigmoid(){
+Matrix Matrix::dTanh(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i, j) = Activation::dSigmoid(matrix[i][j]);
+            result(i, j) = Activation::dTanh(a(i,j));
         }
     }
     return result;
 }
-Matrix Matrix::dTanh(){
+Matrix Matrix::dRelu(Matrix& a){
+    int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
-            result(i, j) = Activation::dTanh(matrix[i][j]);
-        }
-    }
-    return result;
-}
-Matrix Matrix::dRelu(){
-    Matrix result(rows, cols);
-    for(int i=0; i<rows; i++){
-        for(int j=0; j<cols; j++){
-            result(i, j) = Activation::dRelu(matrix[i][j]);
+            result(i, j) = Activation::dRelu(a(i,j));
         }
     }
     return result;

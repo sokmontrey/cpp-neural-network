@@ -10,7 +10,7 @@ double Matrix::sum(){
 	return sum;
 }
 double Matrix::max(){
-	double max = matrix[i][j];
+	double max = matrix[0][0];
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			max = std::max(matrix[i][j], max);
