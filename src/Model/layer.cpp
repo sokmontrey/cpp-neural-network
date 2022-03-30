@@ -1,5 +1,7 @@
 #include "layer.hh"
 
+/*__constructor__*/
+
 Layer::Layer() = default;
 
 Layer::Layer(
@@ -15,6 +17,7 @@ Layer::Layer(
 	this->dActivation = dActivationFunc;
 }
 
+/*__end_constructor__*/
 Matrix Layer::forward(Matrix& input){
 	output = input.matmul(weight) + bias;
 	output = activation(output);
@@ -26,3 +29,15 @@ Matrix Layer::forward(Matrix input){
 	return output;
 }
 
+/*__getter__*/
+Matrix Matrix::getOutput(){ return output; }
+Matrix Matrix::getWeight(){ return weight; }
+Matrix Matrix::getBias(){ return bias; }
+
+/*__setter__*/
+void Matrix::setWeight(Matrix& newWeight){
+	weight = newWeight;
+}
+void Matrix::setBias(Matrix& newBias){
+	bias = newBias;
+}
