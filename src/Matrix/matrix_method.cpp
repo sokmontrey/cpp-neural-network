@@ -1,5 +1,19 @@
 #include "matrix.hh"
 
+Matrix Matrix::matmul(Matrix& other){
+	if(cols != other.getRows())
+		throw std::invalid_argument("Matrix dimensions do not match");
+	Matrix result(rows, other.getCols());
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<other.getCols(); j++){
+			for(int k=0; k<cols; k++){
+				result(i,j) += matrix[i][k] * other(k,j);
+			}
+		}
+	}
+	return result;
+}
+
 double Matrix::sum(){
 	double sum = 0;
 	for(int i=0; i<rows; i++){
