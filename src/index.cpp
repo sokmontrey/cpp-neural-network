@@ -4,7 +4,6 @@
 
 int main(){
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
-	Matrix m(2,3,3);
-
-	cout << Activation::sigmoid(3) << endl;
+	Layer l(2,3,Matrix::relu, Matrix::dSigmoid);
+	l.forward(Matrix({1,2})).print();
 }
