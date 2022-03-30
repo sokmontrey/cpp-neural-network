@@ -21,7 +21,7 @@ class Matrix{
 		Matrix(int rows, int cols);
 		Matrix(int rows, int cols, double value);
 		Matrix(int rows, int cols, vector<double> random);
-		Matrix(int rows, int cols, vector<vector<double>> matrix);
+		Matrix(vector<vector<double>> matrix);
 
 		double& operator()(int row, int col);
 
@@ -45,7 +45,6 @@ class Matrix{
 
 		/*__method__*/
 		Matrix matmul(Matrix& other);
-		Matrix dot(Matrix& other);
 	
 		double sum();
 		double max();
