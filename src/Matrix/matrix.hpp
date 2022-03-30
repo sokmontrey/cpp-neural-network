@@ -13,12 +13,11 @@ class Matrix{
 		vector<vector<double>> matrix;
 	public:
 		Matrix();
+		~Matrix();
 		Matrix(int rows, int cols);
 		Matrix(int rows, int cols, double value);
-		Matrix(int rows, int cols, double min, double max, double seed);
-		Matrix(int rows, int cols, double min, double max);
+		Matrix(int rows, int cols, vector<double> random);
 		Matrix(int rows, int cols, vector<vector<double>> matrix);
-		~Matrix();
 
 		double& operator()(int row, int col);
 

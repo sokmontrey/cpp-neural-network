@@ -1,7 +1,7 @@
 #include "./Matrix/matrix.hpp"
 
 int main(){
-	Matrix m(3,3,-1, 1, 1);
+	Matrix m(2,3, {-10, 10});
 	m.print();
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
 }
