@@ -44,6 +44,9 @@ class Matrix{
 		int getCols();
 
 		/*__method__*/
+		Matrix matmul(Matrix& other);
+		Matrix dot(Matrix& other);
+	
 		double sum();
 		double max();
 
