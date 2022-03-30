@@ -11,6 +11,7 @@ class Matrix{
 		int rows;
 		int cols;
 		vector<vector<double>> matrix;
+
 	public:
 		Matrix();
 		~Matrix();
@@ -18,6 +19,11 @@ class Matrix{
 		Matrix(int rows, int cols, double value);
 		Matrix(int rows, int cols, vector<double> random);
 		Matrix(int rows, int cols, vector<vector<double>> matrix);
+
+		void reshape(int rows, int cols);
+		void reshape(int rows, int cols, double value);
+		void reshape(int rows, int cols, vector<double> random);
+		void reshape(int rows, int cols, vector<vector<double>> matrix);
 
 		double& operator()(int row, int col);
 

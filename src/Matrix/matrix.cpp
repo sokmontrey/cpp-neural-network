@@ -1,7 +1,6 @@
 #include "matrix.hpp"
 
-Matrix::Matrix() = default;
-Matrix::Matrix(int rows, int cols){
+void Matrix::reshape(int rows, int cols){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix.resize(rows);
@@ -9,14 +8,17 @@ Matrix::Matrix(int rows, int cols){
 		this->matrix[i].resize(cols, 0);
 	}
 }
-Matrix::Matrix(int rows, int cols, double value){
+void Matrix::reshape(int rows, int cols, double value){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix.resize(rows);
-	for(int i=0; i<rows; i++)
-		this->matrix[i].resize(cols, value);
+	for(int i=0; i<rows; i++){
+		this->matrix[i].resize(cols);
+		for(int j=0; j<cols; j++)
+			this->matrix[i][j] = value;
+	}
 }
-Matrix::Matrix(int rows, int cols, vector<double> random){
+void Matrix::reshape(int rows, int cols, vector<double> random){
 	this->rows = rows;
 	this->cols = cols;
 
@@ -31,11 +33,26 @@ Matrix::Matrix(int rows, int cols, vector<double> random){
 		}
 	}
 }
-
-Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
+void Matrix::reshape(int rows, int cols, vector<vector<double>> matrix){
 	this->rows = rows;
 	this->cols = cols;
 	this->matrix = matrix;
 }
+
+
+Matrix::Matrix() = default;
 Matrix::~Matrix(){ this->matrix.clear(); }
+
+Matrix::Matrix(int rows, int cols){ 
+	this->reshape(rows, cols);
+}
+Matrix::Matrix(int rows, int cols, double value){
+	this->reshape(rows, cols, value);
+}
+Matrix::Matrix(int rows, int cols, vector<double> random){
+	this->reshape(rows, cols, random);
+}
+Matrix::Matrix(int rows,int cols,vector<vector<double>> matrix){
+	this->reshape(rows, cols, matrix);
+}
 
