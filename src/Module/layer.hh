@@ -8,6 +8,10 @@
 
 using namespace std;
 
+/*
+ * input = [[a1, a2, ... , an]]
+ * output = [[o1, o2, ... , on]]
+ */
 class Layer{
   private:
     Matrix weight;
@@ -26,6 +30,7 @@ class Layer{
     );
   
     Matrix forward(Matrix& input);
+    Matrix forward(Matrix input);
   
     /*__getter__*/
     Matrix getOutput();
