@@ -14,31 +14,31 @@ using namespace std;
  */
 class Layer{
 private:
-	 Matrix weight;
-	 Matrix bias;
-	 Matrix output;
-	 Matrix (*activation)(Matrix& a);
-	 Matrix (*dActivation)(Matrix& activated);
+	Matrix weight;
+	Matrix bias;
+	Matrix output;
+	Matrix (*activation)(Matrix& a);
+	Matrix (*dActivation)(Matrix& activated);
 
 public:
-	 Layer();
-	 Layer(
-			int inputLength, 
-			int outputLength, 
-			Matrix (*activationFunc)(Matrix& a), 
-			Matrix (*dActivationFunc)(Matrix& activated)
-	 );
+	Layer();
+	Layer(
+		int inputLength, 
+		int outputLength, 
+		Matrix (*activationFunc)(Matrix& a), 
+		Matrix (*dActivationFunc)(Matrix& activated)
+	);
 
-	 Matrix forward(Matrix& input);
-	 Matrix forward(Matrix input);
+	Matrix forward(Matrix& input);
+	Matrix forward(Matrix input);
 
-	 /*__getter__*/
-	 Matrix getOutput();
-	 Matrix getWeight();
-	 Matrix getBias();
+	/*__getter__*/
+	Matrix getOutput();
+	Matrix getWeight();
+	Matrix getBias();
 
-	 /*__setter__*/
-	 void setWeight(Matrix& newWeight);
-	 void setBias(Matrix& newBias);
+	/*__setter__*/
+	void setWeight(Matrix& newWeight);
+	void setBias(Matrix& newBias);
 };
 #endif
