@@ -5,6 +5,8 @@
 #include <vector>
 #include <cmath>
 
+#include "../Matrix/matrix.hh"
+
 using namespace std;
 
 class Activation{
@@ -17,17 +19,17 @@ class Activation{
         static double dTanh(double activated);
         static double dRelu(double activated);
 
-		  /*____matrix____*/
+		/*____matrix____*/
 
-			/*__activation__*/
-			static Matrix sigmoid(Matrix& a);
-			static Matrix tanh(Matrix& a);
-			static Matrix relu(Matrix& a);
+		/*__activation__*/
+		static Matrix sigmoid(Matrix& a);
+		static Matrix tanh(Matrix& a);
+		static Matrix relu(Matrix& a);
 
-			/*__derivative_activation__*/
-			static Matrix dSigmoid(Matrix& a);
-			static Matrix dTanh(Matrix& a);
-			static Matrix dRelu(Matrix& a);
+		/*__derivative_activation__*/
+		static Matrix dSigmoid(Matrix& a);
+		static Matrix dTanh(Matrix& a);
+		static Matrix dRelu(Matrix& a);
 };
 
 #endif
