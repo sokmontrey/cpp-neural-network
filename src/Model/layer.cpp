@@ -11,26 +11,31 @@ Layer::Layer(
 ){
 	this->weight = Matrix(inputLength, outputLength, {-1, 1, 1});
 	this->bias = Matrix(1, outputLength, {-1, 1, 1});
-	this->output = Matrix(1, outputLength, 0);
+	this->neurons = Matrix(1, outputLength, 0);
   
 	this->activation = activationFunc;
 	this->dActivation = dActivationFunc;
 }
+Layer::Layer(int neuronLength){
+	this->weight = NULL;
+	this->bias = NULL;
+	this->neurons = Matrix(1, neuronLength, 0);
+}
 
 /*__end_constructor__*/
 Matrix Layer::forward(Matrix& input){
-	output = input.matmul(weight) + bias;
-	output = activation(output);
-	return output;
+	neurons = input.matmul(weight) + bias;
+	neurons = activation(neurons);
+	return neurons;
 }
 Matrix Layer::forward(Matrix input){
-	output = input.matmul(weight) + bias;
-	output = activation(output);
-	return output;
+	neurons = input.matmul(weight) + bias;
+	neurons = activation(neurons);
+	return neurons;
 }
 
 /*__getter__*/
-Matrix Matrix::getOutput(){ return output; }
+Matrix Matrix::getOutput(){ return neurons; }
 Matrix Matrix::getWeight(){ return weight; }
 Matrix Matrix::getBias(){ return bias; }
 
