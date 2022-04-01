@@ -22,14 +22,14 @@ class Activation{
 		/*____matrix____*/
 
 		/*__activation__*/
-		static Matrix sigmoid(Matrix& a);
-		static Matrix tanh(Matrix& a);
-		static Matrix relu(Matrix& a);
+		static Matrix matrixSigmoid(Matrix& a);
+		static Matrix matrixTanh(Matrix& a);
+		static Matrix matrixRelu(Matrix& a);
 
 		/*__derivative_activation__*/
-		static Matrix dSigmoid(Matrix& a);
-		static Matrix dTanh(Matrix& a);
-		static Matrix dRelu(Matrix& a);
+		static Matrix dMatrixSigmoid(Matrix& a);
+		static Matrix dMatrixTanh(Matrix& a);
+		static Matrix dMatrixRelu(Matrix& a);
 };
 
 #endif

@@ -23,14 +23,14 @@ void Model::setActivation(vector<string> activation){
 		Matrix (*actFunc)(Matrix& a) = NULL;
 		Matrix (*dActFunc)(Matrix& a) = NULL;
 		if(activation[i-1] == "sigmoid"){
-			actFunc = Activation::sigmoid;
-			dActFunc = Activation::dSigmoid;
+			actFunc = Activation::matrixSigmoid;
+			dActFunc = Activation::dMatrixSigmoid;
 		}else if(activation[i-1] == "relu"){
-			actFunc = Activation::relu;
-			dActFunc = Activation::dRelu;
+			actFunc = Activation::matrixRelu;
+			dActFunc = Activation::dMatrixRelu;
 		}else if(activation[i-1] == "tanh"){
-			actFunc = Activation::tanh;
-			dActFunc = Activation::dTanh;
+			actFunc = Activation::matrixTanh;
+			dActFunc = Activation::dMatrixTanh;
 		}
 		sequential[i].setActivation(actFunc, dActFunc);
 	}
