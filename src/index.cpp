@@ -4,6 +4,4 @@
 
 int main(){
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
-	Matrix m(2,3);
-	m.print();
 }
