@@ -14,9 +14,20 @@ Model::Model(vector<Layer> sequential){
 }
 Matrix Model::predict(Matrix input){
 	//TODO: in LAYER class create setter to set input
-	//
+	sequential[0].setNeurons(input);
+	for(int i=1; i<layers.size(); i++){
+		sequential[i].forward(sequential[i-1].getNeurons());
+	}
+	return sequential[layer.size()-1].getNeurons();
 }
-
+Matrix Model::predict(Matrix& input){
+	//TODO: in LAYER class create setter to set input
+	sequential[0].setNeurons(input);
+	for(int i=1; i<layers.size(); i++){
+		sequential[i].forward(sequential[i-1].getNeurons());
+	}
+	return sequential[layer.size()-1].getNeurons();
+}
 /*__setter__*/
 void Model::setActivation(vector<string> activation){
 	for(int i=1; i<layers.size(); i++){
