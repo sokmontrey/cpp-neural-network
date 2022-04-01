@@ -16,6 +16,18 @@ class Activation{
         static double dSigmoid(double activated);
         static double dTanh(double activated);
         static double dRelu(double activated);
+
+		  /*____matrix____*/
+
+			/*__activation__*/
+			static Matrix sigmoid(Matrix& a);
+			static Matrix tanh(Matrix& a);
+			static Matrix relu(Matrix& a);
+
+			/*__derivative_activation__*/
+			static Matrix dSigmoid(Matrix& a);
+			static Matrix dTanh(Matrix& a);
+			static Matrix dRelu(Matrix& a);
 };
 
 #endif
