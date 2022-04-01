@@ -22,13 +22,13 @@ void Model::setActivation(vector<string> activation){
 	for(int i=1; i<layers.size(); i++){
 		Matrix (*actFunc)(Matrix& a) = NULL;
 		Matrix (*dActFunc)(Matrix& a) = NULL;
-		if(activation == "sigmoid"){
+		if(activation[i-1] == "sigmoid"){
 			actFunc = Activation::sigmoid;
 			dActFunc = Activation::dSigmoid;
-		}else if(activation == "relu"){
+		}else if(activation[i-1] == "relu"){
 			actFunc = Activation::relu;
 			dActFunc = Activation::dRelu;
-		}else if(activation == "tanh"){
+		}else if(activation[i-1] == "tanh"){
 			actFunc = Activation::tanh;
 			dActFunc = Activation::dTanh;
 		}
