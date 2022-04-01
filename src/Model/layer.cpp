@@ -20,6 +20,8 @@ Layer::Layer(int neuronLength){
 	this->weight = NULL;
 	this->bias = NULL;
 	this->neurons = Matrix(1, neuronLength, 0);
+	this->activation = NULL;
+	this->dActivation = NULL;
 }
 
 /*__end_constructor__*/
