@@ -50,6 +50,9 @@ Matrix Matrix::getWeight(){ return weight; }
 Matrix Matrix::getBias(){ return bias; }
 
 /*__setter__*/
+void Matrix::setNeurons(Matrix& newNeurons){
+	neurons = newNeurons;
+}
 void Matrix::setWeight(Matrix& newWeight){
 	weight = newWeight;
 }
