@@ -13,7 +13,6 @@ class Model{
     private:
 		 vector<Layer> sequential;
 		vector<int> layers;
-		vector<string> activations;
 		Matrix output;
 
     public:
