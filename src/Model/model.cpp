@@ -22,6 +22,7 @@ Matrix Model::predict(Matrix input){
 }
 Matrix Model::predict(Matrix& input){
 	//TODO: in LAYER class create setter to set input
+	//TODO: rename sequential -> network
 	sequential[0].setNeurons(input);
 	for(int i=1; i<layers.size(); i++){
 		sequential[i].forward(sequential[i-1].getNeurons());
