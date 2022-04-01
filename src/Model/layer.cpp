@@ -16,12 +16,20 @@ Layer::Layer(
 	this->activation = activationFunc;
 	this->dActivation = dActivationFunc;
 }
+Layer::Layer(int inputLength, int outputLength){
+	weight = Matrix(inputLength, outputLength, {-1, 1, 1});
+	bias = Matrix(1, outputLength, {-1, 1, 1});
+	neurons = Matrix(1, outputLength, 0);
+	activation = NULL;
+	dActivation = NULL;
+}
 Layer::Layer(int neuronLength){
-	this->weight = NULL;
-	this->bias = NULL;
-	this->neurons = Matrix(1, neuronLength, 0);
-	this->activation = NULL;
-	this->dActivation = NULL;
+	weight = NULL;
+	bias = NULL;
+	neurons = Matrix(1, neuronLength, 0);
+	activation = NULL;
+	dActivation = NULL;
+	isOnlyNeuron = true;
 }
 
 /*__end_constructor__*/
@@ -47,4 +55,15 @@ void Matrix::setWeight(Matrix& newWeight){
 }
 void Matrix::setBias(Matrix& newBias){
 	bias = newBias;
+}
+void Matrix::setActivation(Matrix (*activationFunc)(Matrix& a)){
+	activation = activationFunc;
+}
+void Matrix::setActivation(Matrix (*activationFunc)(Matrix& a), 
+		Matrix (*dActivationFunc)(Matrix& activated)){
+	activation = activationFunc;
+	dActivation = dActivationFunc;
+}
+void Matrix::setDActivation(Matrix (*dActivationFunc)(Matrix& activated)){
+	dActivation = dActivationFunc;
 }

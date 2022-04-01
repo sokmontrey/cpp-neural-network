@@ -6,19 +6,26 @@
 #include <string>
 
 #include "layer.hh"
+#include "../Matrix/matrix.hh"
+#include "../Activation/activation.hh"
 
 class Model{
     private:
-        vector<Layer> model;
-        vector<int> layer;
-        vector<string> activation;
+		 vector<Layer> sequential;
+		vector<int> layers;
+		vector<string> activations;
+		Matrix output;
 
     public:
         Model();
-        Model(vector<int> layer, vector<string> activation);
+        Model(vector<int> layers);
+		  Model(vector<Layer> sequential);
 
-        Matrix forward(Matrix& input);
-        Matrix forward(Matrix input);
+        Matrix predict(Matrix& input);
+        Matrix predict(Matrix input);
+
+		  /*__setter__*/
+		  void setActivation(vector<string> activation);
 }
 
 #endif
