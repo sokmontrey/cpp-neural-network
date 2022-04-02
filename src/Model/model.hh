@@ -18,6 +18,10 @@ class Model{
 		Model(vector<int> shape, vector<Matrix (*)(Matrix& a, bool isDerivative)> activations);
 		Model(vector<Layer> layers);
 
+		/*__neural net method__*/
+		Matrix forward(Matrix& input);
+		Matrix forward(Matrix input);
+
 		/*__getter__*/
 		vector<Matrix> getWeight();
 		vector<Matrix> getBias();

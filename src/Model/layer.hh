@@ -31,6 +31,9 @@ class Layer{
 		Matrix getNeuron();
 
 		/*__setter__*/
+		void setNeuron(Matrix& newNeuron);
+		void setNeuron(Matrix newNeuron);
+
 		void setWeight(Matrix& newWeight);
 		void setBias(Matrix& newBias);
 
