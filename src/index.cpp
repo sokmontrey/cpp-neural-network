@@ -1,9 +1,10 @@
 #include "./Matrix/matrix.hh"
-#include "./Model/model.hh"
 #include "./Activation/activation.hh"
-#include "./Model/layer.hh"
 
 int main(){
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
 	
+	Matrix m({{0,1}});
+	m.print();
+	m.exp().print();
 }
