@@ -12,6 +12,9 @@ Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x, bool i
 	this->neuron = Matrix(1, neuronLength, 0.0);
 	this->activation = func;
 }
+Layer::Layer(int neuronLength){
+	this->neuron = Matrix(1, neuronLength, 0.0);
+}
 /*__neural network method__*/
 Matrix Layer::forward(Matrix& input){
 	this->neuron = input.matmul(this->weight) + this->bias;

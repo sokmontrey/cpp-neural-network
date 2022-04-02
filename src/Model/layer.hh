@@ -17,6 +17,7 @@ class Layer{
 		Layer();
 		Layer(int inputLength, int neuronLength);
 		Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x, bool isDerivative));
+		Layer(int neuronLength);
 
 		/*__neural network method__*/
 		Matrix forward(Matrix& input);
