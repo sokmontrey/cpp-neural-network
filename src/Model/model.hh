@@ -21,6 +21,7 @@ class Model{
 		/*__neural net method__*/
 		Matrix forward(Matrix& input);
 		Matrix forward(Matrix&& input);
+		Matrix forward(vector<vector<double>> input);
 
 		/*__getter__*/
 		vector<Matrix> getWeight();

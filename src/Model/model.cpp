@@ -33,6 +33,13 @@ Matrix Model::forward(Matrix&& input){
 	}
 	return layers[size-1].getNeuron();
 }
+Matrix Model::forward(vector<vector<double>> input){
+	layers[0].setNeuron(Matrix(input));
+	for(int i=1; i<size; i++){
+		layers[i].forward(layers[i-1].getNeuron());
+	}
+	return layers[size-1].getNeuron();
+}
 
 /*__getter__*/
 vector<Matrix> Model::getWeight(){
