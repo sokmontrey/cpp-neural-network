@@ -19,8 +19,41 @@ Model::Model(vector<Layer> layers){
 	}
 }
 
+/*__getter__*/
+vector<Matrix> Model::getWeight(){
+	vector<Matrix> weights;
+	for(int i=1; i<size; i++){
+		weights.push_back(layers[i].getWeight());
+	}
+	return weights;
+}
+vector<Matrix> Model::getBias(){
+	vector<Matrix> biases;
+	for(int i=1; i<size; i++){
+		biases.push_back(layers[i].getBias());
+	}
+	return biases;
+}
+vector<Matrix> Model::getNeuron(){
+	vector<Matrix> neurons;
+	for(int i=0; i<size; i++){
+		neurons.push_back(layers[i].getNeuron());
+	}
+	return neurons;
+}
+
+/*__setter__*/
 void Model::setActivation(vector<Matrix (*)(Matrix& a, bool isDerivative)> activations){
 	for(int i=1; i<size; i++){
 		this->layers[i].setActivation(activations[i-1]);
+	}
+}
+
+void Model::print(){
+	layers[0].getNeuron().print();
+	for(int i=1; i<this->size; i++){
+		layers[i].getWeight().print();
+		layers[i].getBias().print();
+		layers[i].getNeuron().print();
 	}
 }

@@ -18,8 +18,15 @@ class Model{
 		Model(vector<int> shape, vector<Matrix (*)(Matrix& a, bool isDerivative)> activations);
 		Model(vector<Layer> layers);
 
+		/*__getter__*/
+		vector<Matrix> getWeight();
+		vector<Matrix> getBias();
+		vector<Matrix> getNeuron();
+
 		/*__setter__*/
 		void setActivation(vector<Matrix (*)(Matrix& a, bool isDerivative)> activations);
+
+		void print();
 };
 
 #endif
