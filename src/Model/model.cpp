@@ -26,7 +26,7 @@ Matrix Model::forward(Matrix& input){
 	}
 	return layers[size-1].getNeuron();
 }
-Matrix Model::forward(Matrix input){
+Matrix Model::forward(Matrix&& input){
 	layers[0].setNeuron(input);
 	for(int i=1; i<size; i++){
 		layers[i].forward(layers[i-1].getNeuron());

@@ -49,7 +49,7 @@ Matrix Layer::getNeuron(){ return this->neuron; }
 
 /*__setter__*/
 void Layer::setNeuron(Matrix& newNeuron){ neuron = newNeuron; }
-void Layer::setNeuron(Matrix newNeuron){ neuron = newNeuron; }
+void Layer::setNeuron(Matrix&& newNeuron){ neuron = newNeuron; }
 
 void Layer::setWeight(Matrix& newWeight){ weight = newWeight; }
 void Layer::setBias(Matrix& newBias){ bias = newBias; }
