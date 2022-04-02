@@ -9,19 +9,22 @@
 
 using namespace std;
 
-class Activation{
-    public:
-        static double sigmoid(double x);
-        static double tanh(double x);
-        static double relu(double x);
+class Matrix;
 
-        static double dSigmoid(double activated);
-        static double dTanh(double activated);
-        static double dRelu(double activated);
+class Activation{
+	public:
+		static double sigmoid(double x);
+		static double tanh(double x);
+		static double relu(double x);
+
+		static double dSigmoid(double activated);
+		static double dTanh(double activated);
+		static double dRelu(double activated);
 
 		/*____matrix____*/
 
 		/*__activation__*/
+		//define Matrix type for func
 		static Matrix matrixSigmoid(Matrix& a);
 		static Matrix matrixTanh(Matrix& a);
 		static Matrix matrixRelu(Matrix& a);

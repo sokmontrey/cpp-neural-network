@@ -23,7 +23,7 @@ double Activation::dRelu(double activated){
 /*___matrix___*/
 
 /*__activation__*/
-Matrix Activation::sigmoid(Matrix& a){
+Matrix Activation::matrixSigmoid(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
@@ -33,7 +33,7 @@ Matrix Activation::sigmoid(Matrix& a){
     }
     return result;
 }
-Matrix Activation::tanh(Matrix& a){
+Matrix Activation::matrixTanh(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
@@ -43,7 +43,7 @@ Matrix Activation::tanh(Matrix& a){
     }
     return result;
 }
-Matrix Activation::relu(Matrix& a){
+Matrix Activation::matrixRelu(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
@@ -54,7 +54,7 @@ Matrix Activation::relu(Matrix& a){
     return result;
 }
 /*__derivative_activation__*/
-Matrix Activation::dSigmoid(Matrix& a){
+Matrix Activation::dMatrixSigmoid(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
@@ -64,7 +64,7 @@ Matrix Activation::dSigmoid(Matrix& a){
     }
     return result;
 }
-Matrix Activation::dTanh(Matrix& a){
+Matrix Activation::dMatrixTanh(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
@@ -74,7 +74,7 @@ Matrix Activation::dTanh(Matrix& a){
     }
     return result;
 }
-Matrix Activation::dRelu(Matrix& a){
+Matrix Activation::dMatrixRelu(Matrix& a){
     int rows = a.getRows(), cols = a.getCols();
     Matrix result(rows, cols);
     for(int i=0; i<rows; i++){
