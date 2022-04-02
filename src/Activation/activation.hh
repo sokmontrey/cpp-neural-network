@@ -13,26 +13,14 @@ class Matrix;
 
 class Activation{
 	public:
-		static double sigmoid(double x);
-		static double tanh(double x);
-		static double relu(double x);
-
-		static double dSigmoid(double activated);
-		static double dTanh(double activated);
-		static double dRelu(double activated);
+		static double sigmoid(double x, bool isDerivative);
+		static double tanh(double x, bool isDerivative);
+		static double relu(double x, bool isDerivative);
 
 		/*____matrix____*/
-
-		/*__activation__*/
-		//define Matrix type for func
-		static Matrix matrixSigmoid(Matrix& a);
-		static Matrix matrixTanh(Matrix& a);
-		static Matrix matrixRelu(Matrix& a);
-
-		/*__derivative_activation__*/
-		static Matrix dMatrixSigmoid(Matrix& a);
-		static Matrix dMatrixTanh(Matrix& a);
-		static Matrix dMatrixRelu(Matrix& a);
+		static Matrix matrixSigmoid(Matrix& a, bool isDerivative);
+		static Matrix matrixTanh(Matrix& a, bool isDerivative);
+		static Matrix matrixRelu(Matrix& a, bool isDerivative);
 };
 
 #endif
