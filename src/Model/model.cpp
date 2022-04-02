@@ -1,15 +1,6 @@
 #include "./model.hh"
 
 Model::Model() = default;
-Model::Model(vector<int> shape){
-	this->shape = shape;
-	this->size = shape.size();
-	this->layers.resize(size);
-	this->layers[0] = Layer(shape[0]);
-	for(int i=1; i<size; i++){
-		this->layers[i] = Layer(shape[i-1], shape[i]);
-	}
-}
 Model::Model(vector<int> shape, vector<Matrix (*)(Matrix& a, bool isDerivative)> activations){
 	this->shape = shape;
 	this->size = shape.size();
