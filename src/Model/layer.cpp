@@ -23,7 +23,7 @@ Matrix Layer::forward(Matrix& input){
 Matrix Layer::forward(Matrix input){
 	this->neuron = input.matmul(this->weight) + this->bias;
 	if(this->activation != nullptr){
-		this->neuron = this->activation(this->neuron);
+		this->neuron = this->activation(this->neuron, false);
 	}
 	return this->neuron;
 }
@@ -39,3 +39,5 @@ void Layer::setBias(Matrix& newBias){ bias = newBias; }
 
 void Layer::setWeight(Matrix newWeight){ weight = newWeight; }
 void Layer::setBias(Matrix newBias){ bias = newBias; }
+
+void setActivation(Matrix (*func)(Matrix& x)){ activation = func; }

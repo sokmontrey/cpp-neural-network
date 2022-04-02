@@ -34,6 +34,8 @@ class Layer{
 
 		void setWeight(Matrix newWeight);
 		void setBias(Matrix newBias);
+
+		void setActivation(Matrix (*func)(Matrix& x));
 };
 
 #endif
