@@ -21,7 +21,7 @@ class Layer{
 
 		/*__neural network method__*/
 		Matrix forward(Matrix& input);
-		Matrix forward(Matrix input);
+		Matrix forward(Matrix&& input);
 		Matrix forward(vector<vector<double>> input);
 
 		/*__getter__*/
@@ -35,10 +35,10 @@ class Layer{
 		void setNeuron(Matrix&& newNeuron);
 
 		void setWeight(Matrix& newWeight);
-		void setBias(Matrix& newBias);
+		void setBias(Matrix&& newBias);
 
-		void setWeight(Matrix newWeight);
-		void setBias(Matrix newBias);
+		void setBias(Matrix& newBias);
+		void setWeight(Matrix&& newWeight);
 
 		void setActivation(Matrix (*func)(Matrix& x, bool isDerivative));
 };

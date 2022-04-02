@@ -23,7 +23,7 @@ Matrix Layer::forward(Matrix& input){
 	}
 	return this->neuron;
 }
-Matrix Layer::forward(Matrix input){
+Matrix Layer::forward(Matrix&& input){
 	this->neuron = input.matmul(this->weight) + this->bias;
 	if(this->activation != nullptr){
 		this->neuron = this->activation(this->neuron, false);
@@ -52,10 +52,10 @@ void Layer::setNeuron(Matrix& newNeuron){ neuron = newNeuron; }
 void Layer::setNeuron(Matrix&& newNeuron){ neuron = newNeuron; }
 
 void Layer::setWeight(Matrix& newWeight){ weight = newWeight; }
-void Layer::setBias(Matrix& newBias){ bias = newBias; }
+void Layer::setWeight(Matrix&& newWeight){ weight = newWeight; }
 
-void Layer::setWeight(Matrix newWeight){ weight = newWeight; }
-void Layer::setBias(Matrix newBias){ bias = newBias; }
+void Layer::setBias(Matrix& newBias){ bias = newBias; }
+void Layer::setBias(Matrix&& newBias){ bias = newBias; }
 
 void Layer::setActivation(Matrix (*func)(Matrix& x, bool isDerivative)){ 
 	activation = func; 
