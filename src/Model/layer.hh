@@ -12,12 +12,16 @@ class Layer{
 		Matrix weight;
 		Matrix bias;
 		Matrix neuron;
-		Matrix (*activation)(Matrix& x);
+		Matrix (*activation)(Matrix& x) = nullptr;
 
 	public:
 		Layer();
 		Layer(int inputLength, int neuronLength);
 		Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x));
+
+		/*__neural network method__*/
+		Matrix forward(Matrix& input);
+		Matrix forward(Matrix input);
 
 		/*__getter__*/
 		Matrix getWeight();

@@ -12,6 +12,21 @@ Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x)){
 	this->neuron = Matrix(1, neuronLength, 0.0);
 	this->activation = func;
 }
+/*__neural network method__*/
+Matrix Layer::forward(Matrix& input){
+	this->neuron = input.matmul(this->weight) + this->bias;
+	if(this->activation != nullptr){
+		this->neuron = this->activation(this->neuron);
+	}
+	return this->neuron;
+}
+Matrix Layer::forward(Matrix input){
+	this->neuron = input.matmul(this->weight) + this->bias;
+	if(this->activation != nullptr){
+		this->neuron = this->activation(this->neuron);
+	}
+	return this->neuron;
+}
 
 /*__getter__*/
 Matrix Layer::getWeight(){ return this->weight; }
