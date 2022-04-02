@@ -3,12 +3,12 @@
 Layer::Layer() = default;
 Layer::Layer(int inputLength, int neuronLength){
 	this->weight = Matrix(inputLength, neuronLength, {-1,1,0.1});
-	this->bias = Matrix(1, neuronLength, {-1,1,0.5};
+	this->bias = Matrix(1, neuronLength, {-1,1,0.5});
 	this->neuron = Matrix(1, neuronLength, 0.0);
 }
-Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x)){
+Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x, bool isDerivative)){
 	this->weight = Matrix(inputLength, neuronLength, {-1,1,0.1});
-	this->bias = Matrix(1, neuronLength, {-1,1,0.5};
+	this->bias = Matrix(1, neuronLength, {-1,1,0.5});
 	this->neuron = Matrix(1, neuronLength, 0.0);
 	this->activation = func;
 }
@@ -16,12 +16,19 @@ Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x)){
 Matrix Layer::forward(Matrix& input){
 	this->neuron = input.matmul(this->weight) + this->bias;
 	if(this->activation != nullptr){
-		this->neuron = this->activation(this->neuron);
+		this->neuron = this->activation(this->neuron, false);
 	}
 	return this->neuron;
 }
 Matrix Layer::forward(Matrix input){
 	this->neuron = input.matmul(this->weight) + this->bias;
+	if(this->activation != nullptr){
+		this->neuron = this->activation(this->neuron, false);
+	}
+	return this->neuron;
+}
+Matrix Layer::forward(vector<vector<double>> input){
+	this->neuron = Matrix(input).matmul(this->weight) + this->bias;
 	if(this->activation != nullptr){
 		this->neuron = this->activation(this->neuron, false);
 	}
@@ -40,4 +47,6 @@ void Layer::setBias(Matrix& newBias){ bias = newBias; }
 void Layer::setWeight(Matrix newWeight){ weight = newWeight; }
 void Layer::setBias(Matrix newBias){ bias = newBias; }
 
-void setActivation(Matrix (*func)(Matrix& x)){ activation = func; }
+void Layer::setActivation(Matrix (*func)(Matrix& x, bool isDerivative)){ 
+	activation = func; 
+}

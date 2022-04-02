@@ -12,16 +12,17 @@ class Layer{
 		Matrix weight;
 		Matrix bias;
 		Matrix neuron;
-		Matrix (*activation)(Matrix& x) = nullptr;
+		Matrix (*activation)(Matrix& x, bool isDerivative) = nullptr;
 
 	public:
 		Layer();
 		Layer(int inputLength, int neuronLength);
-		Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x));
+		Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x, bool isDerivative));
 
 		/*__neural network method__*/
 		Matrix forward(Matrix& input);
 		Matrix forward(Matrix input);
+		Matrix forward(vector<vector<double>> input);
 
 		/*__getter__*/
 		Matrix getWeight();
@@ -35,7 +36,7 @@ class Layer{
 		void setWeight(Matrix newWeight);
 		void setBias(Matrix newBias);
 
-		void setActivation(Matrix (*func)(Matrix& x));
+		void setActivation(Matrix (*func)(Matrix& x, bool isDerivative));
 };
 
 #endif
