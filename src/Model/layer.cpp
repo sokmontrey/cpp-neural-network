@@ -39,6 +39,10 @@ Matrix Layer::forward(vector<vector<double>> input){
 }
 
 /*__getter__*/
+int Layer::getNeuronSize(){
+	return this->neuron.getCols();
+}
+
 Matrix Layer::getWeight(){ return this->weight; }
 Matrix Layer::getBias(){ return this->bias; }
 Matrix Layer::getNeuron(){ return this->neuron; }

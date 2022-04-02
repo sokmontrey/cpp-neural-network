@@ -25,6 +25,7 @@ class Layer{
 		Matrix forward(vector<vector<double>> input);
 
 		/*__getter__*/
+		int getNeuronSize();
 		Matrix getWeight();
 		Matrix getBias();
 		Matrix getNeuron();
