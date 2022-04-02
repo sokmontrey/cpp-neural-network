@@ -23,6 +23,13 @@ class Layer{
 		Matrix getWeight();
 		Matrix getBias();
 		Matrix getNeuron();
+
+		/*__setter__*/
+		void setWeight(Matrix& newWeight);
+		void setBias(Matrix& newBias);
+
+		void setWeight(Matrix newWeight);
+		void setBias(Matrix newBias);
 };
 
 #endif

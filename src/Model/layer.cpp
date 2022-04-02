@@ -13,7 +13,14 @@ Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x)){
 	this->activation = func;
 }
 
+/*__getter__*/
 Matrix Layer::getWeight(){ return this->weight; }
 Matrix Layer::getBias(){ return this->bias; }
 Matrix Layer::getNeuron(){ return this->neuron; }
 
+/*__setter__*/
+void Layer::setWeight(Matrix& newWeight){ weight = newWeight; }
+void Layer::setBias(Matrix& newBias){ bias = newBias; }
+
+void Layer::setWeight(Matrix newWeight){ weight = newWeight; }
+void Layer::setBias(Matrix newBias){ bias = newBias; }
