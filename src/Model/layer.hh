@@ -18,6 +18,11 @@ class Layer{
 		Layer();
 		Layer(int inputLength, int neuronLength);
 		Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x));
+
+		/*__getter__*/
+		Matrix getWeight();
+		Matrix getBias();
+		Matrix getNeuron();
 };
 
 #endif

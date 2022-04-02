@@ -12,3 +12,8 @@ Layer::Layer(int inputLength, int neuronLength, Matrix (*func)(Matrix& x)){
 	this->neuron = Matrix(1, neuronLength, 0.0);
 	this->activation = func;
 }
+
+Matrix Layer::getWeight(){ return this->weight; }
+Matrix Layer::getBias(){ return this->bias; }
+Matrix Layer::getNeuron(){ return this->neuron; }
+
