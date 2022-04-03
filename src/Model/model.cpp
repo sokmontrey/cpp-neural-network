@@ -24,21 +24,33 @@ Matrix Model::forward(Matrix& input){
 	for(int i=1; i<size; i++){
 		layers[i].forward(layers[i-1].getNeuron());
 	}
-	return layers[size-1].getNeuron();
+	this->output = layers[size-1].getNeuron();
+	return this->output;
 }
 Matrix Model::forward(Matrix&& input){
 	layers[0].setNeuron(input);
 	for(int i=1; i<size; i++){
 		layers[i].forward(layers[i-1].getNeuron());
 	}
-	return layers[size-1].getNeuron();
+	this->output = layers[size-1].getNeuron();
+	return this->output;
 }
 Matrix Model::forward(vector<vector<double>> input){
 	layers[0].setNeuron(Matrix(input));
 	for(int i=1; i<size; i++){
 		layers[i].forward(layers[i-1].getNeuron());
 	}
-	return layers[size-1].getNeuron();
+	this->output = layers[size-1].getNeuron();
+	return this->output;
+}
+double Model::loss(Matrix& target){
+	return this->lossFunc(this->output, target, false).sum();
+}
+Matrix Model::matrixLoss(Matrix& target){
+	return this->lossFunc(this->output, target, false);
+}
+Matrix Model::dMatrixLoss(Matrix& target){
+	return this->lossFunc(this->output, target, true);
 }
 
 /*__getter__*/
@@ -63,6 +75,7 @@ vector<Matrix> Model::getNeuron(){
 	}
 	return neurons;
 }
+Matrix Model::getOutput(){ return this->output; }
 
 /*__setter__*/
 void Model::setActivation(vector<Matrix (*)(Matrix& a, bool isDerivative)> activations){
@@ -70,6 +83,12 @@ void Model::setActivation(vector<Matrix (*)(Matrix& a, bool isDerivative)> activ
 		this->layers[i].setActivation(activations[i-1]);
 	}
 }
+
+void Model::setLoss(Matrix (*lossFunc)(
+			Matrix& output, 
+			Matrix& target, 
+			bool isDerivative
+		)){ this->lossFunc = lossFunc; }
 
 void Model::print(){
 	layers[0].getNeuron().print();

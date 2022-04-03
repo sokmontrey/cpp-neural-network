@@ -11,8 +11,12 @@ class Model{
 	private:
 		int size;
 		vector<int> shape;
+		Matrix output;
+
 		//including input layer
 		vector<Layer> layers;
+		Matrix (*lossFunc)(Matrix& output, Matrix& target, bool isDerivative);
+
 	public:
 		Model();
 		Model(vector<int> shape, vector<Matrix (*)(Matrix& a, bool isDerivative)> activations);
@@ -23,13 +27,19 @@ class Model{
 		Matrix forward(Matrix&& input);
 		Matrix forward(vector<vector<double>> input);
 
+		double loss(Matrix& target);
+		Matrix matrixLoss(Matrix& target);
+		Matrix dMatrixLoss(Matrix& target);
+
 		/*__getter__*/
 		vector<Matrix> getWeight();
 		vector<Matrix> getBias();
 		vector<Matrix> getNeuron();
+		Matrix getOutput();
 
 		/*__setter__*/
 		void setActivation(vector<Matrix (*)(Matrix& a, bool isDerivative)> activations);
+		void setLoss(Matrix (*lossFunc)(Matrix& output, Matrix& target, bool isDerivative));
 
 		void print();
 };
