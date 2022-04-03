@@ -27,9 +27,16 @@ class Model{
 		Matrix forward(Matrix&& input);
 		Matrix forward(vector<vector<double>> input);
 
+		/*__loss__*/
+		double loss(vector<vector<double>> target);
+		Matrix matrixLoss(vector<vector<double>> target);
+		Matrix dMatrixLoss(vector<vector<double>> target);
 		double loss(Matrix& target);
 		Matrix matrixLoss(Matrix& target);
 		Matrix dMatrixLoss(Matrix& target);
+		double loss(Matrix&& target);
+		Matrix matrixLoss(Matrix&& target);
+		Matrix dMatrixLoss(Matrix&& target);
 
 		/*__getter__*/
 		vector<Matrix> getWeight();
