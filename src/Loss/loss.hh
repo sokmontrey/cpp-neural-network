@@ -10,9 +10,7 @@ class Matrix;
 
 class Loss{
 	public:
-		static double mse(Matrix& output, Matrix& target);
-
-		static Matrix matrixMSE(Matrix& output, 
+		static Matrix mse(Matrix& output, 
 				Matrix& target, 
 				bool isDerivative);
 
