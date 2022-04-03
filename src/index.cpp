@@ -2,6 +2,7 @@
 #include "./Activation/activation.hh"
 #include "./Model/layer.hh"
 #include "./Model/model.hh"
+#include "./Loss/loss.hh"
 
 int main(){
 	//g++ index.cpp ./Matrix/*.cpp ./Activation/*.cpp
@@ -14,10 +15,9 @@ int main(){
 			});
 
 	m.setActivation({Activation::matrixSigmoid, Activation::matrixSigmoid});
-	m.print();
-	cout << "\n-----------------\n";
-	m.forward(Matrix({{1,1}})).print();
-	//TODO: abiguis bug
-	cout << "\n-----------------\n";
-	m.print();
+	m.setLoss(Loss::mse);
+	m.forward({{1,2}}).print();
+	m.getOutput().print();
+	cout << m.loss(Matrix({{1,1}})) << endl;
+	m.matrixLoss(Matrix({{1,1}})).print();
 }

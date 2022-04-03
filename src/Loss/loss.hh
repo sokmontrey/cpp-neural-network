@@ -13,7 +13,6 @@ class Loss{
 		static Matrix mse(Matrix& output, 
 				Matrix& target, 
 				bool isDerivative);
-
 };
 
 #endif

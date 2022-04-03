@@ -1,6 +1,6 @@
 #include "./loss.hh"
 
-Matrix Loss::matrixMSE(Matrix& output, Matrix& target, bool isDerivative){
+Matrix Loss::mse(Matrix& output, Matrix& target, bool isDerivative){
 	if(output.getRows() != target.getRows() || output.getCols() != target.getCols()){
 		throw std::invalid_argument("Matrix dimensions do not match");
 	}
