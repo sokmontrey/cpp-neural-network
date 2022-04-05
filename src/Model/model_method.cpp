@@ -24,3 +24,8 @@ Matrix Model::forward(vector<vector<double>> input){
 	this->output = layers[size-1].getNeuron();
 	return this->output;
 }
+
+void Model::train(Matrix& input, Matrix& output){
+	this->forward(input);
+	this->dMatrixLoss(input, output).print();
+}

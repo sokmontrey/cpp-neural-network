@@ -27,6 +27,8 @@ class Model{
 		Matrix forward(Matrix&& input);
 		Matrix forward(vector<vector<double>> input);
 
+		void train(Matrix& input, Matrix& output);
+	
 		/*__loss__*/
 		double loss(vector<vector<double>> target);
 		Matrix matrixLoss(vector<vector<double>> target);
