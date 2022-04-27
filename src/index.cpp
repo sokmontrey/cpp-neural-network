@@ -20,4 +20,6 @@ int main(){
 	m.getOutput().print();
 	cout << m.loss(Matrix({{1,1}})) << endl;
 	m.matrixLoss(Matrix({{1,1}})).print();
+
+  //test v2
 }
