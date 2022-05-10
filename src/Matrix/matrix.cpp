@@ -22,21 +22,28 @@ Matrix::Matrix(int rows, int cols){
 Matrix::Matrix(vector<int> sizes, double value){
 	this->_normal_init(sizes[0], sizes[1], value);
 }
-// Matrix::Matrix(int rows, int cols, vector<double> random){
-// 	this->rows = rows;
-// 	this->cols = cols;
 
-// 	double min = random[0], max = random[1];
-// 	if(random.size() >= 3) srand(random[2]);
+void Matrix::_random_init(int rows, int cols, double min, double max, double seed){
+	this->rows = rows;
+	this->cols = cols;
 
-// 	matrix.resize(rows);
-// 	for(int i=0; i<rows; i++){
-// 		matrix[i].resize(cols);
-// 		for(int j=0; j<cols; j++){
-// 			this->matrix[i][j] = (double)rand()/RAND_MAX*(max-min)+min;
-// 		}
-// 	}
-// }
+	srand(seed);
+	
+	matrix.resize(rows);
+	for(int i=0; i<rows; i++){
+		matrix[i].resize(cols);
+		for(int j=0; j<cols; j++){
+			this->matrix[i][j] = (double)rand()/RAND_MAX*(max-min)+min;
+		}
+	}
+}
+Matrix::Matrix(vector<int> sizes, vector<double> random){
+	double min = random[0],
+		max = random[1],
+		seed = random.size()>=3? random[2] : 1;
+	this->_random_init(sizes[0], sizes[1], min, max, seed);
+}
+
 void Matrix::print() const {
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
