@@ -14,11 +14,13 @@ class Matrix{
 		int cols;
 		vector<vector<double>> matrix;
 
+		void _normal_init(int rows, int cols, double value);
+
 	public:
 		Matrix();
 		~Matrix();
 		Matrix(vector<vector<double>> initMatrix);
-		// Matrix(int rows, int cols);
+		Matrix(int rows, int cols);
 		// Matrix(vector<int> sizes, double value);
 		// Matrix(vector<int> sizes, vector<double> random);
 

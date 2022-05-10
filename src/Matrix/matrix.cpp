@@ -8,14 +8,17 @@ Matrix::Matrix(vector<vector<double>> matrix){
 	this->matrix = matrix;
 }
 
-// Matrix::Matrix(int rows, int cols){ 
-// 	this->rows = rows;
-// 	this->cols = cols;
-// 	this->matrix.resize(rows);
-// 	for(int i = 0; i < rows; i++){
-// 		this->matrix[i].resize(cols, 0);
-// 	}
-// }
+void Matrix::_normal_init(int rows, int cols, double value){
+	this->rows = rows;
+	this->cols = cols;
+	this->matrix.resize(rows);
+	for(int i = 0; i < rows; i++){
+		this->matrix[i].resize(cols, value);
+	}
+}
+Matrix::Matrix(int rows, int cols){ 
+	this->_normal_init(rows, cols, 0);
+}
 // Matrix::Matrix(int rows, int cols, double value){
 // 	this->rows = rows;
 // 	this->cols = cols;
