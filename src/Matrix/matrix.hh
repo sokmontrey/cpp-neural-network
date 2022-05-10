@@ -33,6 +33,7 @@ class Matrix{
 		static Matrix add(Matrix& A, double scalar);
 		static Matrix mul(Matrix& A, double scalar);
 
+		static Matrix neg(Matrix& A);
 		/* matrix ops */
 		static Matrix add(Matrix& A, Matrix& B);
 		static Matrix mul(Matrix& A, Matrix& B);
