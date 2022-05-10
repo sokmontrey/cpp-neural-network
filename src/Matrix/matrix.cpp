@@ -19,16 +19,9 @@ void Matrix::_normal_init(int rows, int cols, double value){
 Matrix::Matrix(int rows, int cols){ 
 	this->_normal_init(rows, cols, 0);
 }
-// Matrix::Matrix(int rows, int cols, double value){
-// 	this->rows = rows;
-// 	this->cols = cols;
-// 	this->matrix.resize(rows);
-// 	for(int i=0; i<rows; i++){
-// 		this->matrix[i].resize(cols);
-// 		for(int j=0; j<cols; j++)
-// 			this->matrix[i][j] = value;
-// 	}
-// }
+Matrix::Matrix(vector<int> sizes, double value){
+	this->_normal_init(sizes[0], sizes[1], value);
+}
 // Matrix::Matrix(int rows, int cols, vector<double> random){
 // 	this->rows = rows;
 // 	this->cols = cols;

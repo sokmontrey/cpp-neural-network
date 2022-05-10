@@ -21,7 +21,7 @@ class Matrix{
 		~Matrix();
 		Matrix(vector<vector<double>> initMatrix);
 		Matrix(int rows, int cols);
-		// Matrix(vector<int> sizes, double value);
+		Matrix(vector<int> sizes, double value);
 		// Matrix(vector<int> sizes, vector<double> random);
 
 		// double& operator()(int row, int col);
