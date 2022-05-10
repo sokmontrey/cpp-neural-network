@@ -36,6 +36,7 @@ class Matrix{
 		/* matrix ops */
 		static Matrix add(Matrix& A, Matrix& B);
 		static Matrix mul(Matrix& A, Matrix& B);
+		static Matrix matmul(Matrix& A, Matrix& B);
 
 		/*__getter__*/
 		int getRows() const;

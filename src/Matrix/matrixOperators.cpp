@@ -59,3 +59,20 @@ Matrix Matrix::mul(Matrix& A, Matrix& B){
 	}
 	return result;
 }
+Matrix Matrix::matmul(Matrix& A, Matrix& B){
+	int ARows = A.getRows(),
+		ACols = A.getCols(),
+		BRows = B.getRows(),
+		BCols = B.getCols();
+	Matrix result(ARows, BCols);
+	for(int i=0; i<ARows; i++){
+		for(int j=0; j<BCols; j++){
+			int sum = 0;
+			for(int k=0; k<ACols; k++){
+				sum += A(i, k) * B(k, j);
+			}
+			result(i, j) = sum;
+		}
+	}
+	return result;
+}
