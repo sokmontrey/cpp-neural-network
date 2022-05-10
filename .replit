@@ -1,2 +1,2 @@
 language = "bash"
-run = "g++ ./src/index.cpp ./a.out"
+run = "g++ ./src/index.cpp ./src/Matrix/*.cpp && ./a.out"
