@@ -29,7 +29,13 @@ class Matrix{
 
 		double& operator()(int row, int col);
 
+		/* scalar ops */
+		static Matrix add(Matrix& A, double scalar);
+		static Matrix mul(Matrix& A, double scalar);
+
+		/* matrix ops */
 		static Matrix add(Matrix& A, Matrix& B);
+		static Matrix mul(Matrix& A, Matrix& B);
 
 		/*__getter__*/
 		int getRows() const;
