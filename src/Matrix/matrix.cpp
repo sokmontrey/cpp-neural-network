@@ -1,7 +1,12 @@
 #include "matrix.hh"
 
-// Matrix::Matrix() = default;
-// Matrix::~Matrix(){ this->matrix.clear(); }
+Matrix::Matrix() = default;
+Matrix::~Matrix(){ this->matrix.clear(); }
+Matrix::Matrix(vector<vector<double>> matrix){
+	this->rows = matrix.size();
+	this->cols = matrix[0].size();
+	this->matrix = matrix;
+}
 
 // Matrix::Matrix(int rows, int cols){ 
 // 	this->rows = rows;
@@ -36,11 +41,6 @@
 // 		}
 // 	}
 // }
-Matrix::Matrix(vector<vector<double>> matrix){
-	this->rows = matrix.size();
-	this->cols = matrix[0].size();
-	this->matrix = matrix;
-}
 void Matrix::print() const {
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){

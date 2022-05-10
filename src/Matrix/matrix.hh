@@ -15,12 +15,12 @@ class Matrix{
 		vector<vector<double>> matrix;
 
 	public:
-		// Matrix();
-		// ~Matrix();
+		Matrix();
+		~Matrix();
+		Matrix(vector<vector<double>> initMatrix);
 		// Matrix(int rows, int cols);
 		// Matrix(vector<int> sizes, double value);
 		// Matrix(vector<int> sizes, vector<double> random);
-		Matrix(vector<vector<double>> initMatrix);
 
 		// double& operator()(int row, int col);
 
