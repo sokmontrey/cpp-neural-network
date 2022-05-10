@@ -2,11 +2,6 @@
 
 Matrix::Matrix() = default;
 Matrix::~Matrix(){ this->matrix.clear(); }
-Matrix::Matrix(vector<vector<double>> matrix){
-	this->rows = matrix.size();
-	this->cols = matrix[0].size();
-	this->matrix = matrix;
-}
 
 void Matrix::_normal_init(int rows, int cols, double value){
 	this->rows = rows;
@@ -22,13 +17,16 @@ Matrix::Matrix(int rows, int cols){
 Matrix::Matrix(vector<int> sizes, double value){
 	this->_normal_init(sizes[0], sizes[1], value);
 }
+Matrix::Matrix(vector<vector<double>> initMatrix){
+	this->rows = initMatrix.size();
+	this->cols = initMatrix[0].size();
+	this->matrix = initMatrix;
+}
 
 void Matrix::_random_init(int rows, int cols, double min, double max, double seed){
 	this->rows = rows;
 	this->cols = cols;
-
 	srand(seed);
-	
 	matrix.resize(rows);
 	for(int i=0; i<rows; i++){
 		matrix[i].resize(cols);
@@ -48,8 +46,9 @@ void Matrix::print() const {
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			printf("%.3f ", matrix[i][j]);
-		}
-		cout << endl;
+		} cout << endl;
 	}
 }
 
+int Matrix::getRows() const{ return this->rows; }
+int Matrix::getCols() const{ return this->cols; }

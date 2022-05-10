@@ -20,30 +20,20 @@ class Matrix{
 	public:
 		Matrix();
 		~Matrix();
-		Matrix(vector<vector<double>> initMatrix);
 		Matrix(int rows, int cols);
 		Matrix(vector<int> sizes, double value);
 		Matrix(vector<int> sizes, vector<double> random);
 
-		// double& operator()(int row, int col);
+		//use Matrix(vector<vector<double>> {}) to initialize
+		Matrix(vector<vector<double>> initMatrix);
 
-		// /*__scalar_operator__*/
-		// Matrix operator+(double scalar);
-		// Matrix operator*(double scalar);
-		// Matrix operator-(double scalar);
-		// Matrix operator/(double scalar);
+		double& operator()(int row, int col);
 
-		// /*__matrix_operator__*/
-		// Matrix operator^(Matrix& other); //matmul
-		// Matrix operator*(Matrix& other); //mul
-		// Matrix operator+(Matrix& other); 
-		// Matrix operator-(Matrix& other);
+		static Matrix add(Matrix& A, Matrix& B);
 
-		// Matrix operator-();
-
-		// /*__getter__*/
-		// int getRows();
-		// int getCols();
+		/*__getter__*/
+		int getRows() const;
+		int getCols() const; 
 
 		// /*__method__*/
 		// Matrix matmul(Matrix& other);
