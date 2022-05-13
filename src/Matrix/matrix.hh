@@ -29,22 +29,29 @@ class Matrix{
 
 		double& operator()(int row, int col);
 
-		/* scalar ops */
+		/* scalar operation */
 		static Matrix add(Matrix& A, double scalar);
 		static Matrix mul(Matrix& A, double scalar);
 
 		static Matrix neg(Matrix& A);
-		/* matrix ops */
+		/* matrix operation */
 		static Matrix add(Matrix& A, Matrix& B);
 		static Matrix mul(Matrix& A, Matrix& B);
 		static Matrix matmul(Matrix& A, Matrix& B);
 
+		/* scalar operator */
+		Matrix operator+(double scalar);
+		Matrix operator*(double scalar);
+		
+		Matrix operator-();
+
+		/* matrix operator */
+		Matrix operator+(Matrix& other);
+		Matrix operator*(Matrix& other);
+
 		/*__getter__*/
 		int getRows() const;
 		int getCols() const; 
-
-		// /*__method__*/
-		// Matrix matmul(Matrix& other);
 	
 		// double sum();
 		// double max();

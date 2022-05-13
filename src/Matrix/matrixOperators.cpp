@@ -5,7 +5,27 @@ double& Matrix::operator()(int row, int col){
 	return this->matrix[row][col];
 }
 
-/* scalar ops */
+/* scalar operator */
+Matrix Matrix::operator+(double scalar){
+	return Matrix::add(this, scalar);
+}
+Matrix Matrix::operator*(double scalar){
+	return Matrix::mul(this, scalar);
+}
+
+Matrix Matrix::operator-(){
+	return Matrix::neg(this);
+}
+
+/* matrix operator */
+Matrix Matrix::operator+(Matrix& other){
+	return Matrix::add(this, other);
+}
+Matrix Matrix::operator*(Matrix& other){
+	return Matrix::mul(this, other);
+}
+
+/* scalar operation */
 Matrix Matrix::add(Matrix& A, double scalar){
 	//TODO: error handler
 	int rows = A.getRows();
@@ -43,7 +63,8 @@ Matrix Matrix::neg(Matrix& A){
 	}
 	return result;
 }
-/* matrix ops */
+
+/* matrix operation */
 Matrix Matrix::add(Matrix& A, Matrix& B){
 	//TODO: error handler
 	int rows = A.getRows();
