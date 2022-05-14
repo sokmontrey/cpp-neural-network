@@ -6,7 +6,9 @@
 
 class Activation{
 	public:
-		static double sigmoid(double x,bool isDerivative,bool isActivated);
+		static double sigmoid(double x, bool isDerivative=false, bool isActivated=true);
+		static double tanh(double x, bool isDerivative=false, bool isActivated=true);
+		static double relu(double x, bool isDerivative=false);
 }; 
 
 #endif
