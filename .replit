@@ -1,2 +1,0 @@
-language = "bash"
-run = "g++ ./src/index.cpp ./src/Matrix/*.cpp""
