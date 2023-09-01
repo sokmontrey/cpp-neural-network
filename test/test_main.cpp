@@ -33,16 +33,10 @@ int main(){
     Add z3{&m3, &b[2]};
     Tanh o{&z3};
 
-    o.finished();
+    Node t = Node::Constant(1, 1, 1);
 
-    o.forward();
-    o.print();
-    o.reset();
-
-    x(0,0) = 10;
-
-    o.forward();
-    o.print();
+    Subtract s{&o, &t};
+    Pow s2({&s}, 2);
 
     return 0;
 }

@@ -1,2 +1,2 @@
 # cpp-neural-network
-An attemp on building artificial neural network library from scratch in c++
+An attemp on building machine learning library in C++ on top of nodeflow.
