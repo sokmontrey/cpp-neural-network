@@ -1,2 +1,5 @@
-# find_package(lib_name)
-# target_link_libraries(${PROJECT_NAME} lib_name)
+add_subdirectory(nodeflow)
+add_subdirectory(matplotplusplus)
+target_link_libraries(${PROJECT_NAME} nodeflow matplot)
+
+
