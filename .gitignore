@@ -1,1 +1,3 @@
 /build/*
+source/third_party/nodeflow/
+source/third_party/matplotplusplus/
